@@ -21,13 +21,13 @@ process ANNDATA_GETSIZE {
     task.ext.when == null || task.ext.when
 
     script:
-    prefix = task.ext.prefix ?: "${meta.id}"    
+    prefix = task.ext.prefix ?: "${meta.id}"
     template 'getsize.py'
-    
+
     stub:
     prefix = task.ext.prefix ?: "${meta.id}"
     """
-    
+
     touch ${prefix}.txt
 
     """
